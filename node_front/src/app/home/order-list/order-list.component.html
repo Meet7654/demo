@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="card m-5 p-3">
+    <div class="card-body">
+      <table datatable class="table table-bordered table-striped table-hover">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>User Name</th>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Total Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let order of allOrders">
+          <td>{{ order.id }}</td>
+          <td>{{ order.user.first_name + ' ' + order.user.last_name}}</td>
+          <td>{{ order.product.name }}</td>
+          <td>{{ order.product_quantity }}</td>
+          <td>{{ order.total_price }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

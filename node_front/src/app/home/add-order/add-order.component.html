@@ -1,0 +1,25 @@
+ <div class="card-body">
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+      <h5>Add Order:-</h5>
+      <tr>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngIf="product">
+        <td>{{ product.name}}</td>
+        <td><img [src]="imgPath + product.image" style="height: 100px ; width: 100px"/></td>
+        <td>{{ product.price }}</td>
+        <td><button (click)="removeQuantity(quantity)">-</button>{{ quantity }} <button (click)="addQuantity(quantity)">+</button></td>
+        <td>{{ product.price * quantity }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary" (click)="submit()">+ Add Order</button>

@@ -1,0 +1,33 @@
+<form [formGroup]="addProduct" (ngSubmit)="submit()">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="pname">Name</label>
+      <input type="text" class="form-control" id="pname" placeholder="Name" formControlName="name">
+    </div>
+  </div>
+  <br />
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="image">Image</label><br />
+      <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+      <div><img [src]="url" *ngIf="url" style="height: 250px ; width: 250px"></div>
+      <input type="file" accept="image/*" id="image" (change)="selectFile($event)" />
+    </div>
+  </div>
+  <br />
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="price">Price</label>
+      <input type="text" class="form-control" id="price" placeholder="Price" formControlName="price">
+    </div>
+  </div>
+  <br />
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="quantity">Quantity</label>
+      <input type="text" class="form-control" id="quantity" placeholder="Quantity" formControlName="quantity">
+    </div>
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary" [disabled]="addProduct.invalid">+ Add Product</button>
+</form>

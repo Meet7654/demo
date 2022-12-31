@@ -1,0 +1,6 @@
+.idea
+node_front/node_modules
+node_back/node_modules
+node_front/.angular
+
+node_back/.env

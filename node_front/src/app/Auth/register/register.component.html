@@ -1,0 +1,24 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="fname">First Name</label>
+      <input type="text" class="form-control" id="fname" placeholder="First Name" formControlName="first_name">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="lname">Last Name</label>
+      <input type="text" class="form-control" id="lname" placeholder="Last Name" formControlName="last_name">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+    </div>
+  </div>
+  <button class="btn btn-primary" type="button" [routerLink]="['/login']">Already have an account?Login</button>
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Register</button>
+</form>
